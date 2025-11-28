@@ -30,3 +30,53 @@ console.log(totalAge);
 var num=1;
 var newNum=++num + ++num + ++num + num++ ;
 console.log(newNum);
+
+var a=1;
+var b=1;
+var sum=a++ + b++ + a++ + b++ + ++a + ++b;
+// sum=1+1+2+2+4+4
+console.log(sum);
+// alert("Hello,World");
+var a=1;
+var b=1;
+var sum=++a + b++ + ++a + ++b; 
+console.log(sum);
+console.log("Hello World!");
+
+// var name=  promt("Enter your name");
+// alert( name);
+
+
+alert("Hello");
+
+var uname="ali";
+var age=20;
+if (uname =="ali"){
+    if (age ==21){
+    }
+else{
+    console.log("Don't allow")
+}
+}
+
+
+// Array //
+// what is data type
+// "ali" string
+// 234 number
+//  ture/false --> bolean variable
+// undefined -->  abhi mene data nahin rakha
+// var name = nul -->  mtlb data to rakh le h lekin abhi nahin;
+
+// array
+var city1="karachi";
+var city2="Mirpurkhas";
+var city2="Hyderabad";
+
+var cities = ["karachi", "Mirpurkhas", "Hyderabad"]; //-->   // this is called array//
+
+//index(unique id of an element ) -> //id-start-from (0)
+// length -> quantity of an element
+// console.log (type of cities) //object
+console.log(cities);
+console.log(cities[0]);
