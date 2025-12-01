@@ -183,32 +183,74 @@
 // else{
 //     alert("come to our cookout!");
 // }
-var a=1
-var b=7
-var c=2
-var d=2
-var x=5
-var y=6
-var g=1
-var h=0
-var e=11
-var f=12
 
-if(c ===d){
-    if(x === y){
-        console.log("g=h");
-    }
-    else if(a ===b){
-        console.log("h=g");
-    }
+// var a=1
+// var b=7
+// var c=2
+// var d=2
+// var x=5
+// var y=6
+// var g=1
+// var h=0
+// var e=11
+// var f=12
 
-    else{
-        console.log("e=f");
-    }
-}
+// if(c ===d){
+//     if(x === y){
+//         console.log("g=h");
+//     }
+//     else if(a ===b){
+//         console.log("h=g");
+//     }
+
+//     else{
+//         console.log("e=f");
+//     }
+// }
 
 
 // Array
 // pop=shift} are used to remove an element from end and beggining respect:  --> methods
 // push =unshift} are used to add  an element to the end and beggining respect:   --> methods
 
+
+// Use the splice method to insert one or more elements anywhere in an array, while optionally removing one or more elements that come after it.
+
+var arr=["cat","fog","snake"]
+var newArr =arr.splice(0,1,"bike","motor")
+
+console.log(newArr)
+console.log("array =>",arr)
+
+// Use the slice method to copy one or more consecutive elements in any position and put them into a new array
+
+// var arr=["cat","fog","snake","fly", "Duck" ,"a"]
+
+// arr.slice(2,5)
+// console.log(arr)
+
+
+// push //performance-fast
+// unshift // performance-slow
+// pop //performance-fast
+// shift // performance-slow
+
+
+
+
+
+// console.log([]==[])
+// console.log(""=="")
+
+// loop it include 3things we can say it ICU
+// var i=0; // initialize 
+// i>0 ; // condition
+// i++; //updation
+// var number=Number(prompt("enter your number"));
+// for (var i = 1; i < 11; i++){
+// console.log(number +"  x   "+i + "  =  " +(i * number));
+// }
+var arr=["a","b","c","d","e", " "]
+for (let i=0;i < 5; i++) {
+    console.log(arr[i])
+}
