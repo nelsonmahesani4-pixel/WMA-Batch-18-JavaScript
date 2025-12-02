@@ -247,10 +247,16 @@ console.log("array =>",arr)
 // i>0 ; // condition
 // i++; //updation
 // var number=Number(prompt("enter your number"));
-// for (var i = 1; i < 11; i++){
-// console.log(number +"  x   "+i + "  =  " +(i * number));
-// }
-var arr=["a","b","c","d","e", " "]
-for (let i=0;i < 5; i++) {
-    console.log(arr[i])
+for (var i = 1;  i < 11; i++){
+console.log(2 +"  x   "+ i + "  =  " +(i * 2));
 }
+
+for (var i = 10; i >= 1; i--) {
+  console.log(2 + "  x   " + i + "  =  " + (i * 2));
+}
+
+
+// var arr=["a","b","c","d","e", " "]
+// for (let i=0;i < 5; i++) {
+//     console.log(arr[i])
+// }
