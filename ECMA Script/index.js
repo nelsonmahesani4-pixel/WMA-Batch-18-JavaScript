@@ -246,17 +246,54 @@ console.log("array =>",arr)
 // var i=0; // initialize 
 // i>0 ; // condition
 // i++; //updation
-// var number=Number(prompt("enter your number"));
-for (var i = 1;  i < 11; i++){
-console.log(2 +"  x   "+ i + "  =  " +(i * 2));
-}
 
-for (var i = 10; i >= 1; i--) {
-  console.log(2 + "  x   " + i + "  =  " + (i * 2));
-}
+// for-loop -->  kise bhi array par iteration  krna 
+
+// var number=Number(prompt("enter your number"));
+// for (var i = 1;  i < 11; i++){
+// console.log(2 +"  x   "+ i + "  =  " +(i * 2));
+// }
+
+// for (var i = 10; i >= 1; i--) {
+//   console.log(2 + "  x   " + i + "  =  " + (i * 2));
+// }
 
 
 // var arr=["a","b","c","d","e", " "]
 // for (let i=0;i < 5; i++) {
 //     console.log(arr[i])
 // }
+
+// if ( x === y){}
+
+// Nested array/for loop
+
+// var twoDArray = [
+//   [1,2,3,],
+//   [4,5,6],
+//   [7,8,9,[2,"g",["c",10]]]
+// ];
+
+// console.log("twoDimensionArray =>", twoDArray)
+// console.log("lenght", twoDArray.length)
+// console.log(twoDArray[2][3][2][0])
+
+var arr1 =[[1,2,3], [4,5,6],[7,8,9]]
+var arr2 =[[9,8,7], [6,5,4],[3,2,1]]
+
+var sumOfArr =arr1[0][0] + arr2[0][0];
+console.log("sum", sumOfArr)
+
+var twoDArr= [[1,2,3],[4,5,6],[7,8,9]]
+for(i = 0; i<twoDArr.length; i++ ) {
+  // console.log(twoDArr[i][0])
+  for(j = 0; j<twoDArr[i].length; j++ ) {
+  console.log(twoDArr[i][j])
+  // console.log(twoDArr[0][0])
+  // console.log(twoDArr[0][1])
+  // console.log(twoDArr[0][2])
+  // console.log(twoDArr[1][0])
+  // console.log(twoDArr[1][1])
+  // console.log(twoDArr[1][2])
+  }
+}
