@@ -289,11 +289,5 @@ for(i = 0; i<twoDArr.length; i++ ) {
   // console.log(twoDArr[i][0])
   for(j = 0; j<twoDArr[i].length; j++ ) {
   console.log(twoDArr[i][j])
-  // console.log(twoDArr[0][0])
-  // console.log(twoDArr[0][1])
-  // console.log(twoDArr[0][2])
-  // console.log(twoDArr[1][0])
-  // console.log(twoDArr[1][1])
-  // console.log(twoDArr[1][2])
   }
 }
