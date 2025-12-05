@@ -278,16 +278,25 @@ console.log("array =>",arr)
 // console.log("lenght", twoDArray.length)
 // console.log(twoDArray[2][3][2][0])
 
-var arr1 =[[1,2,3], [4,5,6],[7,8,9]]
-var arr2 =[[9,8,7], [6,5,4],[3,2,1]]
+// var arr1 =[[1,2,3], [4,5,6],[7,8,9]]
+// var arr2 =[[9,8,7], [6,5,4],[3,2,1]]
 
-var sumOfArr =arr1[0][0] + arr2[0][0];
-console.log("sum", sumOfArr)
+// var sumOfArr =arr1[0][0] + arr2[0][0];
+// console.log("sum", sumOfArr)
 
-var twoDArr= [[1,2,3],[4,5,6],[7,8,9]]
-for(i = 0; i<twoDArr.length; i++ ) {
-  // console.log(twoDArr[i][0])
-  for(j = 0; j<twoDArr[i].length; j++ ) {
-  console.log(twoDArr[i][j])
-  }
+// var twoDArr= [[1,2,3],[4,5,6],[7,8,9]]
+// for(i = 0; i<twoDArr.length; i++ ) {
+//   // console.log(twoDArr[i][0])
+//   for(j = 0; j<twoDArr[i].length; j++ ) {
+//   console.log(twoDArr[i][j])
+//   }
+// }
+
+var numbers = [1,2,3,4,5]
+var sum = (numbers);
+for(var i = 0; i<numbers.length; i++ ) {
+ console.log( numbers[i] *numbers[i])
+var square = ( numbers[i] *numbers[i]);
+console.log(sum + square)
+
 }
