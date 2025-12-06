@@ -1,33 +1,33 @@
 // (Exercise 1) Alert
 
-// alert("Hello, World!")
-// alert("Nelson Rathore Mahesani")
-// alert(5)
+alert("Hello, World!")
+alert("Nelson Rathore Mahesani")
+alert(5)
 
-// var firstName = "Nelson";
-// alert(firstName)
+var firstName = "Nelson";
+alert(firstName)
 
-// var name = "Nelson";
-// alert("Hello " + name);
+var name = "Nelson";
+alert("Hello " + name);
 
 // (Exercise 2) variables for Strings
 
-// var  userName = "Nelson";
-// console.log(userName);
-// var msg = "Welcome";
-// alert(msg);
+var  userName = "Nelson";
+console.log(userName);
+var greetingMsg = "Welcome";
+alert(greetingMsg );
 
-// var firstName = "Nelson ";
-// var lastName = "Rathore";
-// var combName = firstName + lastName
-// console.log(combName)
+var firstName = "Nelson ";
+var lastName = "Rathore";
+var fullName = firstName + lastName ;
+console.log(fullName)
 
-// var myFavQuote = "I don’t write code to impress people — I write it to improve myself.";
-// alert(myFavQuote)
-// console.log(myFavQuote);
+var myFavQuote = "I don’t write code to impress people — I write it to improve myself.";
+alert(myFavQuote)
+console.log(myFavQuote);
 
-// var city = "Welcomr to [Karachi]!";
-// alert(city);
+var city = "Welcomr to [Karachi]!";
+alert(city);
 
 // (exercise 3) Variables for numbers
 // var age = 17;
@@ -66,11 +66,11 @@ console.log(riminder);
 
 // (exercise 5) Prompt
 
-// var userAge = prompt("enter your age ")
-// console.log(userAge);
+var userAge = prompt("enter your age ")
+console.log(userAge);
 
-// var userNum = Number(prompt("enter number "))
-// console.log(userNum + userNum++);
+var userNum = Number(prompt("enter number "))
+console.log(userNum + userNum++);
 
 var color = prompt("what is your favorite color")
 
