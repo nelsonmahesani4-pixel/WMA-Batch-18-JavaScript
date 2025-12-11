@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,5 +7,326 @@
 </head>
 <body>
     <script src="index.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nelson Mahesani — Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0f15;
+      --card: rgba(255,255,255,0.06);
+      --accent:#00d2ff;
+      --muted: #b6c2cc;
+      --glass: rgba(255,255,255,0.04);
+      --white: #ffffff;
+    }
+    /* Light theme variables (swapped by .light class on <html>) */
+    html.light { --bg:#f6f8fb; --card: rgba(12,18,28,0.04); --accent:#0066ff; --muted:#4b5563; --glass: rgba(255,255,255,0.75); --white:#0b0f15; }
+
+    *{box-sizing:border-box}
+    body,html{height:100%; margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--bg), #07111a); color:var(--white); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px;}
+
+    /* NAV */
+    header{position:fixed;top:0;left:0;right:0;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-bottom:1px solid rgba(255,255,255,0.03);z-index:50}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1100px;margin:0 auto;padding:14px}
+    .logo{font-weight:700;letter-spacing:0.2px}
+    nav ul{display:flex;gap:18px;align-items:center;list-style:none;margin:0;padding:0}
+    nav a{font-weight:500;color:var(--muted);padding:8px;border-radius:8px;transition:all .18s}
+    nav a:hover{color:var(--white);background:var(--glass)}
+    .cta-btn{background:var(--accent);color:#000;padding:8px 12px;border-radius:8px;font-weight:600}
+    .menu-toggle{display:none;font-size:22px;cursor:pointer}
+
+    /* HERO */
+    .hero{min-height:88vh;display:flex;align-items:center;padding-top:80px}
+    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:center}
+    .hero-title{font-size:clamp(28px,4.5vw,44px);line-height:1.03}
+    .hero-title .name{color:var(--accent);display:inline-block}
+    .hero-sub{margin-top:14px;color:var(--muted);max-width:60ch}
+    .hero-actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+
+    /* profile card */
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,0.45);text-align:center}
+    .avatar{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#7b61ff);display:inline-flex;align-items:center;justify-content:center;color:#000;font-weight:700;font-size:28px;margin:8px auto 12px;overflow:hidden}
+    .small-meta{color:var(--muted);font-size:14px;margin-bottom:8px}
+    .socials{display:flex;gap:10px;justify-content:center;margin-top:10px}
+    .sbtn{width:38px;height:38px;border-radius:8px;display:inline-grid;place-items:center;background:var(--glass);color:var(--white);font-weight:600}
+
+    /* SECTIONS */
+    section{padding:72px 0}
+    h2{font-size:20px;margin-bottom:12px}
+    p.lead{color:var(--muted);max-width:70ch}
+
+    /* Skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:18px}
+    .skill-pill{background:var(--card);padding:12px;border-radius:10px;text-align:center;font-weight:600}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+    .proj{background:var(--card);padding:18px;border-radius:12px;transition:transform .22s, box-shadow .22s}
+    .proj:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.5)}
+    .proj h3{margin:0 0 8px 0}
+    .proj p{color:var(--muted);font-size:14px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:22px}
+    form{display:flex;flex-direction:column;gap:12px}
+    input,textarea{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);resize:vertical}
+    .submit{background:var(--accent);color:#000;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+
+    /* Footer */
+    footer{padding:24px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:32px}
+
+    /* Utilities */
+    .chip{display:inline-block;padding:6px 10px;background:var(--glass);border-radius:999px;font-weight:600;color:var(--muted)}
+    .muted{color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){ .hero-grid{grid-template-columns:1fr 320px} .contact-grid{grid-template-columns:1fr} }
+    @media (max-width:740px){
+      nav ul{display:none}
+      .menu-toggle{display:block}
+      .hero-grid{grid-template-columns:1fr;gap:20px;text-align:left}
+      .profile-card{width:100%}
+      header{padding-bottom:6px}
+    }
+
+    /* Mobile menu overlay */
+    .mobile-nav{position:fixed;right:18px;top:70px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));padding:14px;border-radius:12px;backdrop-filter: blur(8px);display:none;flex-direction:column;gap:10px;z-index:60}
+    .mobile-nav a{color:var(--white);padding:8px;border-radius:8px}
+    .mobile-nav.show{display:flex}
+
+    /* small screen tweaks for avatar initials */
+    .avatar img{width:100%;height:100%;object-fit:cover}
+
+    /* smooth scroll behavior */
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner container">
+      <div class="logo">Nelson Mahesani</div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="cta-btn" onclick="location.href='#projects'">See Work</button>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#home" onclick="closeMobile()">Home</a>
+      <a href="#about" onclick="closeMobile()">About</a>
+      <a href="#skills" onclick="closeMobile()">Skills</a>
+      <a href="#projects" onclick="closeMobile()">Projects</a>
+      <a href="#contact" onclick="closeMobile()">Contact</a>
+      <button class="cta-btn" style="width:100%;margin-top:6px" onclick="closeMobile();location.href='#projects'">See Work</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1 class="hero-title">Hey — I'm <span class="name">Nelson Mahesani</span></h1>
+          <p class="hero-sub lead">I build modern, responsive websites and UI that help brands and creators shine online. I work with HTML, CSS, JavaScript, React and simple backend APIs.</p>
+          <div class="hero-actions">
+            <a class="cta-btn" href="#projects">View Projects</a>
+            <a class="chip" href="#contact">Hire Me</a>
+            <button class="chip" id="themeToggle" title="Toggle light / dark">Toggle Theme</button>
+          </div>
+
+          <div style="margin-top:20px">
+            <span class="muted">Based in:</span> <strong>Pakistan</strong>
+            &nbsp;&middot;&nbsp;
+            <span class="muted">Available for:</span> <strong>Freelance / Remote</strong>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="profile card">
+          <!-- Replace the <img> src with your photo. If you don't have a photo, initials will show -->
+          <!-- Option 1: Use image - replace REPLACE_ME.jpg with your filename -->
+          <!-- <div class="avatar"><img src="REPLACE_ME.jpg" alt="Nelson Mahesani"></div> -->
+
+          <!-- Option 2: Initials (default) -->
+          <div class="avatar">NM</div>
+
+          <div style="font-weight:700">Nelson Mahesani</div>
+          <div class="small-meta">Web Developer • UI/UX Enthusiast</div>
+
+          <div class="muted" style="font-size:13px">Quick info</div>
+          <div style="margin-top:8px">
+            <div class="small-meta">Email: <a href="mailto:REPLACE_ME@example.com" style="color:var(--accent)">REPLACE_ME@example.com</a></div>
+            <div class="small-meta">Phone: <span class="muted">+92-XXXXXXXXXX</span></div>
+          </div>
+
+          <div class="socials">
+            <!-- replace # with actual profile links -->
+            <a class="sbtn" href="#" title="GitHub">GH</a>
+            <a class="sbtn" href="#" title="LinkedIn">in</a>
+            <a class="sbtn" href="#" title="Dribbble or Behance">DB</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p class="lead">I turn ideas into interactive, accessible and performant websites. I focus on clean UI, responsive layouts and pragmatic code that is easy to maintain. I enjoy collaborating with founders and teams to ship features quickly and elegantly.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-pill">HTML &amp; Semantics</div>
+          <div class="skill-pill">Modern CSS (Flex / Grid)</div>
+          <div class="skill-pill">Responsive Design</div>
+          <div class="skill-pill">JavaScript (ES6+)</div>
+          <div class="skill-pill">Git &amp; Deployment</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <h2>Selected Projects</h2>
+
+        <div class="projects-grid">
+          <article class="proj">
+            <h3>Portfolio Website</h3>
+            <p>A custom portfolio built with HTML, CSS and minimal JS — optimized for speed and accessibility.</p>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="chip" href="#" target="_blank">Live</a>
+              <a class="chip" href="#" target="_blank">Code</a>
+            </div>
+          </article>
+
+          <article class="proj">
+            <h3>E-commerce UI</h3>
+            <p>High-fidelity UI design for a shop; includes product grid, filters and cart UX (static prototype).</p>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="chip" href="#" target="_blank">Prototype</a>
+              <a class="chip" href="#" target="_blank">Case Study</a>
+            </div>
+          </article>
+
+          <article class="proj">
+            <h3>Weather App (API)</h3>
+            <p>Small app using a public weather API to show city forecasts, responsive and mobile-friendly.</p>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="chip" href="#" target="_blank">Live</a>
+              <a class="chip" href="#" target="_blank">Code</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+
+        <div class="contact-grid">
+          <div>
+            <p class="lead">Want to work together? Send a quick message — I reply within a few business days.</p>
+
+            <form onsubmit="sendMail(event)">
+              <input id="name" type="text" placeholder="Full name" required>
+              <input id="email" type="email" placeholder="Email address" required>
+              <input id="subject" type="text" placeholder="Subject" required>
+              <textarea id="message" rows="6" placeholder="Your message" required></textarea>
+              <button class="submit" type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <aside class="profile-card" style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+            <div style="font-weight:700">Let's connect</div>
+            <div class="muted">Email</div>
+            <a href="mailto:REPLACE_ME@example.com" style="color:var(--accent);word-break:break-all">REPLACE_ME@example.com</a>
+
+            <div class="muted" style="margin-top:8px">Follow</div>
+            <div style="display:flex;gap:8px">
+              <a class="chip" href="#" target="_blank">GitHub</a>
+              <a class="chip" href="#" target="_blank">LinkedIn</a>
+              <a class="chip" href="#" target="_blank">Twitter</a>
+            </div>
+
+            <div style="margin-top:12px;color:var(--muted);font-size:13px">Tip: Replace placeholders (email, links, images) with your real info.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Nelson Mahesani — Built with ❤️</div>
+    </div>
+  </footer>
+
+  <script>
+    // small interactive behavior: mobile menu, theme toggle, mail (mailto fallback)
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    menuToggle.addEventListener('click', ()=> mobileNav.classList.toggle('show'));
+    function closeMobile(){ mobileNav.classList.remove('show') }
+
+    // theme toggle: toggles 'light' class on <html>
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('light');
+      // store preference
+      if(document.documentElement.classList.contains('light')) localStorage.setItem('theme','light');
+      else localStorage.removeItem('theme');
+    });
+    // restore theme
+    if(localStorage.getItem('theme')==='light') document.documentElement.classList.add('light');
+
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple contact: create mailto link when submit
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const mail = document.getElementById('email').value.trim();
+      const sub = encodeURIComponent(document.getElementById('subject').value.trim());
+      const msg = encodeURIComponent('From: '+name+' ('+mail+')\n\n' + document.getElementById('message').value.trim());
+      // replace REPLACE_ME@example.com with your real email in code or prompt the user to replace
+      const to = 'REPLACE_ME@example.com';
+      const mailto = `mailto:${to}?subject=${sub}&body=${msg}`;
+      window.location.href = mailto;
+    }
+  </script>
 </body>
 </html>
