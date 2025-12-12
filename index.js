@@ -119,14 +119,31 @@ console.log(item["huury"])
 
 // function is like a object//
 // New --> keyword denote object 
-var date =new Date();
-console.log(date.getMonth())
-console.log(date.getDate())
-console.log(date.getHours())
-console.log(date.getMilliseconds())
-console.log("Time :",date.getTime())
+// var date =new Date();
+// console.log(date.getMonth())
+// console.log(date.getDate())
+// console.log(date.getHours())
+// console.log(date.getMilliseconds())
+// console.log("Time :",date.getTime())
 // assignment create an array of month and access the current month of that 
 // use of milliseconds 
 // 1.OTP 
 // 2. passwords 
 // 
+
+// function
+
+// Date() //method // uncontrolled
+// myFunction() // function  --keyword  // controlled by user
+
+// pure function
+// impure function
+
+function myFunction(){ // blueprint  // address reference 
+    console.log("function called"   )
+}
+myFunction()
+myFunction()
+//when we called this function the function will destroyed only function is excute
+// myFunction --> invoke krna or called krna function ko
+
