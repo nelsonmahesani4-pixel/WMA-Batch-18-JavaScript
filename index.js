@@ -107,7 +107,26 @@ console.log(item["huury"])
 //     console.log(citrus); // Output: ['banana', 'orange']
 //     console.log(fruitsNme); // Output: ['apple', 'banana', 'orange', 'grape'] (original array unchanged)
 
-var arr = ["dog,cat,bird"];
-var result = arr.pop("0");
-console.log("==>",arr);
-console.log(result);
+// var arr = ["dog,cat,bird"];
+// var result = arr.pop("0");
+// console.log("==>",arr);
+// console.log(result);
+
+// var number = 1.345;
+// var fixedNumber = number.toFixed(2);
+// console.log(fixedNumber)
+// console.log(typeof number);
+
+// function is like a object//
+// New --> keyword denote object 
+var date =new Date();
+console.log(date.getMonth())
+console.log(date.getDate())
+console.log(date.getHours())
+console.log(date.getMilliseconds())
+console.log("Time :",date.getTime())
+// assignment create an array of month and access the current month of that 
+// use of milliseconds 
+// 1.OTP 
+// 2. passwords 
+// 
