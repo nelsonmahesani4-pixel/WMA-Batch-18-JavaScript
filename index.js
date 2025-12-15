@@ -147,3 +147,50 @@ myFunction()
 //when we called this function the function will destroyed only function is excute
 // myFunction --> invoke krna or called krna function ko
 
+// let x = 100/0 
+//     console.log(x)
+
+//     let name = "ALice" + 10 ;
+//     console.log(name)
+// let x =10;
+// for (let x = 10; x>1; x -= 2){
+// console.log("hello")
+// }
+
+// let x = 10;
+// let y = 20
+// function test(y) {
+//     console.log(y)
+// }
+
+// test(x);
+
+// let show = function () {
+//     console.log("test");
+
+// }
+// setTimeout(show,2000);
+
+// let b = 20;
+// onscrollend.log(b)
+//FUNCTIONS 
+// function firstfunction() {
+// }
+// firstfunction() // independent / loose  mode
+
+// Date() // strick mode
+
+
+// Es6  
+//array function
+
+// var firstfunction = () => {
+//     console.log("inside function")
+// }
+//  firstfunction()
+
+function funct() {
+    console.log("Hi")
+}
+
+funct()
