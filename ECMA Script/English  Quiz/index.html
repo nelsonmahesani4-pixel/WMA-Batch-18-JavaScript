@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Preposition Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .progress {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: #667eea;
+            height: 100%;
+            transition: width 0.3s;
+        }
+        .question-container {
+            margin: 30px 0;
+        }
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+        .option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        .option input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .option label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-next {
+            background: #667eea;
+            color: white;
+        }
+        .btn-next:hover {
+            background: #5568d3;
+        }
+        .btn-submit {
+            background: #28a745;
+            color: white;
+        }
+        .btn-submit:hover {
+            background: #218838;
+        }
+        .btn-reset {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-reset:hover {
+            background: #5a6268;
+        }
+        .results {
+            text-align: center;
+            display: none;
+        }
+        .results h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .score-box {
+            background: #667eea;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .score-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .score-box p {
+            font-size: 18px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>English Preposition Quiz</h1>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div id="quizContainer">
+            <div class="question-container">
+                <div class="question-number" id="questionNumber"></div>
+                <div class="question-text" id="questionText"></div>
+                <div class="options" id="optionsContainer"></div>
+            </div>
+            <div class="buttons">
+                <button class="btn-next" id="nextBtn" onclick="nextQuestion()">Next</button>
+                <button class="btn-submit hidden" id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+        </div>
+
+        <div class="results" id="resultsContainer">
+            <h2 id="resultTitle"></h2>
+            <div class="score-box" id="scoreBox">
+                <h3>Your Score</h3>
+                <p id="scoreText"></p>
+                <p id="percentageText"></p>
+            </div>
+            <p id="resultMessage" style="font-size: 18px; color: #333; margin: 20px 0;"></p>
+            <button class="btn-reset" onclick="resetQuiz()">Retake Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            { question: "The book is ____ the table.", options: ["on", "at", "in", "by"], correct: 0 },
+            { question: "She is ____ the hospital.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "I will meet you ____ noon.", options: ["in", "at", "on", "by"], correct: 1 },
+            { question: "The cat is hiding ____ the bed.", options: ["in", "under", "on", "at"], correct: 1 },
+            { question: "He walked ____ the park.", options: ["through", "in", "on", "at"], correct: 0 },
+            { question: "I am interested ____ programming.", options: ["with", "in", "on", "at"], correct: 1 },
+            { question: "She arrived ____ 5 PM.", options: ["in", "on", "at", "by"], correct: 2 },
+            { question: "The picture is ____ the wall.", options: ["in", "on", "at", "by"], correct: 1 },
+            { question: "We are going ____ vacation next month.", options: ["on", "in", "at", "to"], correct: 0 },
+            { question: "He works ____ a bank.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "I was born ____ 1995.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "The flower is ____ the vase.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "She sat ____ the chair.", options: ["in", "on", "at", "by"], correct: 1 },
+            { question: "The bird flew ____ the sky.", options: ["in", "on", "across", "over"], correct: 2 },
+            { question: "I live ____ the city center.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "He is looking ____ his glasses.", options: ["for", "at", "on", "in"], correct: 0 },
+            { question: "The map is ____ the drawer.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "She waited ____ the bus stop.", options: ["at", "in", "on", "by"], correct: 0 },
+            { question: "The children played ____ the playground.", options: ["in", "on", "at", "by"], correct: 2 },
+            { question: "I arrived ____ the station early.", options: ["at", "in", "on", "by"], correct: 0 },
+            { question: "The keys are ____ the desk.", options: ["on", "in", "at", "by"], correct: 0 },
+            { question: "She is afraid ____ spiders.", options: ["of", "in", "on", "at"], correct: 0 },
+            { question: "I am thinking ____ you.", options: ["of", "in", "on", "at"], correct: 0 },
+            { question: "The ladder is leaning ____ the wall.", options: ["against", "in", "on", "at"], correct: 0 },
+            { question: "I'm standing ____ you.", options: ["in front of", "in", "on", "at"], correct: 0 },
+            { question: "The book fell ____ the table.", options: ["off", "in", "on", "at"], correct: 0 },
+            { question: "She jumped ____ the pool.", options: ["into", "in", "on", "at"], correct: 0 },
+            { question: "He is running ____ the house.", options: ["towards", "in", "on", "at"], correct: 0 },
+            { question: "The pen is ____ my hand.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "I'm working ____ a project.", options: ["on", "in", "at", "by"], correct: 0 },
+            { question: "She is looking ____ her sister.", options: ["after", "in", "on", "at"], correct: 0 },
+            { question: "The cat is sleeping ____ the sofa.", options: ["on", "in", "at", "by"], correct: 0 },
+            { question: "I have been here ____ three hours.", options: ["for", "in", "on", "at"], correct: 0 },
+            { question: "She is different ____ her brother.", options: ["from", "in", "on", "at"], correct: 0 },
+            { question: "The party is ____ Saturday night.", options: ["on", "in", "at", "by"], correct: 0 },
+            { question: "I am concerned ____ the environment.", options: ["about", "in", "on", "at"], correct: 0 },
+            { question: "He left ____ the morning.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "The shop is closed ____ Sunday.", options: ["on", "in", "at", "by"], correct: 0 },
+            { question: "She succeeded ____ passing the exam.", options: ["in", "on", "at", "by"], correct: 0 },
+            { question: "I agree ____ you completely.", options: ["with", "in", "on", "at"], correct: 0 },
+            { question: "The house is built ____ stone.", options: ["of", "in", "on", "at"], correct: 0 },
+            { question: "He is married ____ a doctor.", options: ["to", "in", "on", "at"], correct: 0 },
+            { question: "She is good ____ mathematics.", options: ["at", "in", "on", "by"], correct: 0 },
+            { question: "The decision was made ____ the meeting.", options: ["during", "in", "on", "at"], correct: 0 },
+            { question: "I'll see you ____ 3 PM tomorrow.", options: ["at", "in", "on", "by"], correct: 0 },
+            { question: "The building is opposite ____ the school.", options: ["to", "in", "on", "at"], correct: 0 },
+            { question: "She is aware ____ the dangers.", options: ["of", "in", "on", "at"], correct: 0 },
+            { question: "He is responsible ____ the project.", options: ["for", "in", "on", "at"], correct: 0 },
+            { question: "I am capable ____ doing this task.", options: ["of", "in", "on", "at"], correct: 0 },
+            { question: "The bridge connects ____ two cities.", options: ["the two", "in", "on", "at"], correct: 0 },
+            { question: "She speaks English ____ fluency.", options: ["with", "in", "on", "at"], correct: 0 }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answers = new Array(quizData.length).fill(null);
+
+        function loadQuestion() {
+            const quiz = quizData[currentQuestion];
+            document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+            document.getElementById('questionText').textContent = quiz.question;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            quiz.options.forEach((option, index) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                div.innerHTML = `
+                    <label>
+                        <input type="radio" name="answer" value="${index}" ${answers[currentQuestion] === index ? 'checked' : ''}>
+                        ${option}
+                    </label>
+                `;
+                optionsContainer.appendChild(div);
+            });
+
+            updateProgress();
+            updateButtonVisibility();
+        }
+
+        function nextQuestion() {
+            const selected = document.querySelector('input[name="answer"]:checked');
+            if (!selected) {
+                alert('Please select an answer!');
+                return;
+            }
+
+            answers[currentQuestion] = parseInt(selected.value);
+            currentQuestion++;
+
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function updateButtonVisibility() {
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (currentQuestion === quizData.length - 1) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function submitQuiz() {
+            const selected = document.querySelector('input[name="answer"]:checked');
+            if (!selected) {
+                alert('Please select an answer!');
+                return;
+            }
+
+            answers[currentQuestion] = parseInt(selected.value);
+
+            score = 0;
+            answers.forEach((answer, index) => {
+                if (answer === quizData[index].correct) {
+                    score++;
+                }
+            });
+
+            const percentage = ((score / quizData.length) * 100).toFixed(2);
+            document.getElementById('scoreText').textContent = `${score} out of ${quizData.length}`;
+            document.getElementById('percentageText').textContent = `${percentage}%`;
+
+            // Add pass/fail message
+            const resultTitle = document.getElementById('resultTitle');
+            const resultMessage = document.getElementById('resultMessage');
+            const scoreBox = document.getElementById('scoreBox');
+
+            if (percentage >= 70) {
+                resultTitle.textContent = '🎉 Quiz Completed!';
+                resultMessage.textContent = 'Congratulations! You passed the quiz!';
+                resultMessage.style.color = '#28a745';
+                scoreBox.style.background = '#28a745';
+            } else {
+                resultTitle.textContent = '❌ Quiz Completed!';
+                resultMessage.textContent = 'Sorry, you failed the quiz. Please try again!';
+                resultMessage.style.color = '#dc3545';
+                scoreBox.style.background = '#dc3545';
+            }
+
+            document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('resultsContainer').style.display = 'block';
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            answers = new Array(quizData.length).fill(null);
+            document.getElementById('quizContainer').style.display = 'block';
+            document.getElementById('resultsContainer').style.display = 'none';
+            loadQuestion();
+        }
+
+        // Load the first question on page load
+        loadQuestion();
+    </script>
+</body>
+</html>
