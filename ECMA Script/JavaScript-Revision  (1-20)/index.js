@@ -86,11 +86,88 @@
 // } else {
 //   console.log(value);
 // }
-var arr = []
 
-arr[200] = "ali"
-arr[150] = "asad"
-arr[139] = "don't touch"
-console.log(arr[arr.length-51])
-alert(arr[arr.length-62])
-// console.log([150])
+// var arr = []
+
+// arr[200] = "ali"
+// arr[150] = "asad"
+// arr[139] = "don't touch"
+// console.log(arr[arr.length-51])
+// alert(arr[arr.length-62])
+// // console.log([150])
+
+
+// var marks = 40;
+// if (marks <= 50) {
+// alert("You are Pass");
+// } else {
+// alert("You are Fail");
+// }
+// let grade = 75; // Example grade
+
+// if (grade >= 80) {
+//  alert("A Grade");
+// } else if (grade <= 60) {
+//  alert("B Grade"); // This code runs if grade is less than 80 but 60 or more
+// } else {
+//  alert("C Grade"); // This code runs if grade is less than 60
+// }
+
+var grade = 85;
+
+
+// if (grade >= 80) {
+// alert("A Grade");
+// } else if (grade >= 60) {
+// alert("B Grade");
+// } else {
+// alert("C Grade");
+// }
+
+
+// let age = 5;
+
+
+var firstNames = ["BlueRay ", "Upchuck ", "Lojack ", "Gizmo ", "Do-Rag "];
+var lastNames = ["Zzz", "Burp", "Dogbone", "Droop"];
+var fullNames = [];
+for (var i = 0; i < firstNames.length; i++) {
+    for (var j = 0; j < lastNames.length; j++) {
+        fullNames.push(firstNames[i] + lastNames[j])
+    }
+    console.log(firstNames[i] + lastNames[j])
+}
+
+
+var uname = prompt("enter your name");
+var arr = ["saad", "ali","bilal", "asad"]
+var unameInLower = uname.toLowerCase()
+
+for(var i = 0; i<arr.length; i++){
+    if(unameInLower == "ali") {
+        console.log(unameInLower,"milgaya")
+    }
+    else("sorry not found")
+}
+
+// steps of solve specfic problems is called algorthims
+// var text = "World War II"
+ 
+// for( var i = 0; i<text.length; i++) {
+//     if(text.slice(i,i + 12) === "World War II"){
+//         text = text.slice(0,i) + "The second War "  +  text.slice(i + 12)
+//     }
+//     console.log("text==>",text)
+// }
+// var textChar = text.indexOf("word War II");
+// console.log(textChar)
+
+let text = "I like apples and apples.";
+let newText = text.replace("apples", "oranges");
+// Result: "I like oranges and apples."
+console.log ( newText)
+
+var age = prompt("enter age")
+var newAge = parseInt(age) + 10;
+
+console.log(newAge)
