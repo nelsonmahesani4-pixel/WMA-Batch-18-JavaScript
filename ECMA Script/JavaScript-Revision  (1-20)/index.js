@@ -128,27 +128,27 @@ var grade = 85;
 // let age = 5;
 
 
-var firstNames = ["BlueRay ", "Upchuck ", "Lojack ", "Gizmo ", "Do-Rag "];
-var lastNames = ["Zzz", "Burp", "Dogbone", "Droop"];
-var fullNames = [];
-for (var i = 0; i < firstNames.length; i++) {
-    for (var j = 0; j < lastNames.length; j++) {
-        fullNames.push(firstNames[i] + lastNames[j])
-    }
-    console.log(firstNames[i] + lastNames[j])
-}
+// var firstNames = ["BlueRay ", "Upchuck ", "Lojack ", "Gizmo ", "Do-Rag "];
+// var lastNames = ["Zzz", "Burp", "Dogbone", "Droop"];
+// var fullNames = [];
+// for (var i = 0; i < firstNames.length; i++) {
+//     for (var j = 0; j < lastNames.length; j++) {
+//         fullNames.push(firstNames[i] + lastNames[j])
+//     }
+//     console.log(firstNames[i] + lastNames[j])
+// }
 
 
-var uname = prompt("enter your name");
-var arr = ["saad", "ali","bilal", "asad"]
-var unameInLower = uname.toLowerCase()
+// var uname = prompt("enter your name");
+// var arr = ["saad", "ali","bilal", "asad"]
+// var unameInLower = uname.toLowerCase()
 
-for(var i = 0; i<arr.length; i++){
-    if(unameInLower == "ali") {
-        console.log(unameInLower,"milgaya")
-    }
-    else("sorry not found")
-}
+// for(var i = 0; i<arr.length; i++){
+//     if(unameInLower == "ali") {
+//         console.log(unameInLower,"milgaya")
+//     }
+//     else("sorry not found")
+
 
 // steps of solve specfic problems is called algorthims
 // var text = "World War II"
@@ -162,12 +162,93 @@ for(var i = 0; i<arr.length; i++){
 // var textChar = text.indexOf("word War II");
 // console.log(textChar)
 
-let text = "I like apples and apples.";
-let newText = text.replace("apples", "oranges");
-// Result: "I like oranges and apples."
-console.log ( newText)
+// let text = "I like apples and apples.";
+// let newText = text.replace("apples", "oranges");
+// // Result: "I like oranges and apples."
+// console.log ( newText)
+
+// var age = prompt("enter age")
+// var newAge = parseInt(age) + 10;
+
+// console.log(newAge)
+
+//functions 
+
+// function myFunction(num1,num2)  {
+//     // var result = num1 + num2;
+//     return num1 + num2
+// }
+
+// console.log(myFunction(2,3))
+
+
+var mName = "Ali"
+function test() {
+    mName = "in function"
+}
+
+
+test()
+mName = "Khan"
+console.log("name==>",mName)
+
+
+//switch statement
+
+//if else for complex logic or multiple condition
+
+
+//switch 
+// simple logic 
+// simple condition
+
 
 var age = prompt("enter age")
-var newAge = parseInt(age) + 10;
+switch (age) {
+    case 10:
+        console.log("age is correct", age)
+        break;
+    case 20:
+        console.log("age is correct", age)
+        break;
+    case 30:
+        console.log("age is correct", age)
+        break;
 
-console.log(newAge)
+    // default
+    // console.log("are you hacker");
+}
+
+// var dayOfWk = prompt("enter days of Week")
+// switch(dayOfWk) {
+//  case "Sat" :
+//  alert("Whoopee");
+//  break;
+//  case "Sun" :
+//  alert("Whoopee");
+//  break;
+//  case "Fri" :
+//  alert("TGIF!");
+//  break;
+//  default :
+//  alert("Shoot me now!");
+//  }
+
+// while loop -->  don't know  about length that 
+//for-loop--> when we have to know about length  
+
+// var i = 0;
+// while (i<5) {
+//     console.log("chal gaya")
+// }
+// do-while loop
+var i = 0;
+do {
+    console.log("chal gaya")
+    i++
+}
+while(i<5);
+
+
+
+
