@@ -203,21 +203,20 @@ console.log("name==>",mName)
 // simple condition
 
 
-var age = prompt("enter age")
-switch (age) {
-    case 10:
-        console.log("age is correct", age)
-        break;
-    case 20:
-        console.log("age is correct", age)
-        break;
-    case 30:
-        console.log("age is correct", age)
-        break;
+// var age = prompt("enter age")
+// switch (age) {
+//     case 10:
+//         console.log("age is correct", age)
+//         break;
+//     case 20:
+//         console.log("age is correct", age)
+//         break;
+//     case 30:
+//         console.log("age is correct", age)
+//         break;
 
     // default
     // console.log("are you hacker");
-}
 
 // var dayOfWk = prompt("enter days of Week")
 // switch(dayOfWk) {
@@ -242,12 +241,59 @@ switch (age) {
 //     console.log("chal gaya")
 // }
 // do-while loop
-var i = 0;
-do {
-    console.log("chal gaya")
-    i++
+// var i = 0;
+// do {
+//     console.log("chal gaya")
+//     i++
+// }
+// while(i<5);
+
+// function checkEmail(emailID){
+//    var email= document.getElementById('emailID').value
+//    if (email=="") {
+//     alert("Please enter your email")
+//    }
+//    console.log("email", emailID)
+// }
+
+function checkCampus(){
+    var rollNum = document.getElementById("rollNumber").value
+    var campus;
+
+
+    switch (rollNum) {
+        case "10":
+            campus = "Zaitoon Ahsraf campus"
+            break;
+            case "20":
+            campus = "Gulshan Iqbal campus"
+            break;
+            case "100":
+            campus = "Bhadurabad campus"
+            break;
+        default:
+            alert("not entrolled")
+            break;
+    }
+    document.getElementById("campus").value = campus;
 }
-while(i<5);
+
+
+function toggleText() {
+  let dots = document.getElementById("dots");
+  let moreText = document.getElementById("more");
+  let btn = document.getElementById("btn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    moreText.style.display = "none";
+    btn.innerText = "Read More";
+  } else {
+    dots.style.display = "none";
+    moreText.style.display = "inline";
+    btn.innerText = "Read Less";
+  }
+}
 
 
 
