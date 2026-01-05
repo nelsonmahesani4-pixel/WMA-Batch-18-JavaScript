@@ -295,6 +295,62 @@ function toggleText() {
   }
 }
 
+function Increment() {
+    let count = document.getElementById("count").innerText;
+    count = parseInt(count) + 2;
+    document.getElementById("count").innerText = count;
 
+    console.log("count==>", count)
+}
 
+function Decrement() {
+    let count = document.getElementById("count").innerText;
+    count = parseInt(count) - 2;
+    document.getElementById("count").innerText = count;
+}
 
+function Reset() {
+    document.getElementById("count").innerText = 0;
+
+}
+
+function showPassWord() { 
+    let passwordField = document.getElementById("password");
+    let passFieldType = passwordField.getAttribute("type");
+    if(passFieldType === "password") {
+        passwordField.setAttribute("type", "text");
+    } else {
+        passwordField.setAttribute("type", "password");
+    }
+} 
+/* create same counter with switch statement*/
+// prime number check function
+function isPrime(num) {
+    if (num <= 1) return false; 
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+
+}
+// function checkNumber() {  
+//     let numberInput = document.querySelector("input[type='number']").value;
+//     numberInput = parseInt(numberInput);
+//     if (isPrime(numberInput)) {
+//         alert(numberInput + " is a prime number.");
+//     } else {
+//         alert(numberInput + " is not a prime number.");
+//     } }
+
+    function checkNumber(){
+var number = document.getElementById("number").value;
+var message =document.getElementById("para");
+console.log("number==>",number);
+for (let i=2;  i<number; i++){
+  if(number%i ==0){
+    message.innerText= number + " is not a prime number" + number;
+    return;
+  }
+}
+message.innerText= number + " is a prime number" + number;
+    }

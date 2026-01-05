@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Js Revisions</title>
+    <link rel="stylesheet" href="style.css">
+    font-awesome cdn
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmCULaMxtX6w5IQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- <h1 onmouseover="alert('Welcome')"><button><a href="JavaScript:void(0)">Js revision (1-20)  </a></button></h1> -->
-    <h1>Events</h1>
-    <!-- <form onsubmit="CheckEmail(emailID)">
-   <input type="text" id ="emailID">
-   <input type="submit" value="Order Now" >
- </form> -->
+<h1>Event Project</h1>
 
- <form onsubmit="checkCampus()">
-    rollNo:
-    <br>
-    <input type="rollNo" name="" id="rollNumber" placeholder="rollNo">
-    <br>
-    Campus:
-    <br>
-    <input type="text" name="campus" id="campus" placeholder="campus">
-    <br>
-    <input type="Submit" name="" id=""type="subm    it">
- </form>
 
- <p id="text">
-  JavaScript ek powerful language hai jo websites ko interactive banati hai.
-  <span id="dots">...</span>
-  <span id="more">
-    Iski madad se hum buttons, forms, animations aur dynamic content bana
-    sakte hain jo user experience ko behtar banata hai.
-  </span>
-</p>
+<div class="counter">
+    <h1>Counter</h1>
+    <div id="count">0</div>
+<button id="increment" onclick="Increment()">Increment</button>
+<button id="decrement" onclick="Decrement()">Decrement</button>
+<button id="reset" onclick="Reset()">Reset</button>
+</div>
 
-<button onclick="toggleText()" id="btn">Read More</button>
+
+<div id="container">
+    <h1>Login Page</h1>
+    <input type="text"placeholder="Enter you name" id="name" required>
+    <input type="email" placeholder="Enter your email" id="email" required>
+    <input type="password" placeholder="Enter your password" id="password" required>
+    <span id="showPassword" onclick="showPassWord()"><i class="fa-solid fa-eye"></i></span><br>   
+    <button id="add-btn" onclick="addUser()">Add User</button>
+    <input type="number" placeholder="enter number">
+    <button onclick="checkNumber()">Check number</button>
+</div>
 
 
     <script src="./index.js"></script>
