@@ -1,5 +1,6 @@
 {
     "github.copilot.chat.agent.currentEditorContext.enabled": false,
     "github.copilot.chat.alternateGptPrompt.enabled": false,
-    "livePreview.defaultPreviewPath": "/login Page/index.html"
+    "livePreview.defaultPreviewPath": "/login Page/index.html",
+    "liveServer.settings.port": 5501
 }
