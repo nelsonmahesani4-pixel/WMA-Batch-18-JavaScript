@@ -51,14 +51,19 @@ function pi(radius){
 }
 console.log(pi(5));
 
-class car{
-    constructor( model, year){
-        this.model = model;
-        this.year = year;
-    }
-    details(){
-        console.log(`car  Model is : ${this.model}, Year: ${this.year}`);
-    }
+// class car{
+//     constructor(){
+        
+//     }
+//     details(model, year){
+//         // console.log(`car  Model is : ${this.model}, Year: ${this.year}`);
+//          this.model = model;
+//         this.year = year;
+//     }
+// }
+// const mycar = new car("BMW", 2020);
+// console.log(mycar.details());
+
+function counter(){
+    
 }
-const mycar = new car("BMW", 2020);
-mycar.details();
