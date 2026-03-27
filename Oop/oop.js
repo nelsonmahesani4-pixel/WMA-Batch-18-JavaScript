@@ -45,3 +45,20 @@ function area(length){
     return 5 * length;  //abstraction
 }
 console.log(area(10)); 
+
+function pi(radius){
+    return Math.PI * radius * radius; //abstraction     
+}
+console.log(pi(5));
+
+class car{
+    constructor( model, year){
+        this.model = model;
+        this.year = year;
+    }
+    details(){
+        console.log(`car  Model is : ${this.model}, Year: ${this.year}`);
+    }
+}
+const mycar = new car("BMW", 2020);
+mycar.details();
