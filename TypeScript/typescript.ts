@@ -64,6 +64,7 @@ const bike ={
     bmodel: 2022,
     bactive: true,
 }
+
 console.log("bike", bike);
 
 // interface --> it is a blueprint of an object which defines the structure of an object
@@ -79,6 +80,21 @@ const car: CarType = {
     cactive: true,
 }
 console.log("car", car);
+
+// union type --> it is a type that can be one of the multiple types
+var data: string | number;
+data = "nelson";
+data = 23;
+// data = true; // error
+
+// -- functions in typescript--
+
+// function myFunct(message){
+//     console.log("msg", message);
+// }
+// myFunct("This is a function");
+
+
 
 
  

@@ -27,3 +27,13 @@ const car = {
     cactive: true,
 };
 console.log("car", car);
+// union type --> it is a type that can be one of the multiple types
+var data;
+data = "nelson";
+data = 23;
+// data = true; // error
+// -- functions in typescript--
+function myFunct(message) {
+    console.log("msg", message);
+}
+myFunct("This is a function");
