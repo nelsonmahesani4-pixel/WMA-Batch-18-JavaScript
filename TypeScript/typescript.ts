@@ -28,25 +28,25 @@ myData = true;
 var arr:[number, string , boolean]= [ 1, "ali", true];
 console.log("arr", arr);
 
-// var arr: readonly [string,number] = ["nelson", 1];
-// arr.push("rathore");
+var arr: readonly [string,number] = ["nelson", 1];
+arr.push("rathore");
  
-// console.log("arr", arr);
+console.log("arr", arr);
 
 // enum(for objects) --> set specific keys in constants and assign values to them
 
-const obj = {
-    sname:"nelson",
-    sage: 12,
-}
-console.log("obj", obj);
+// const obj = {
+//     sname:"nelson",
+//     sage: 12,
+// }
+// console.log("obj", obj);
 // enum(numeric)
-enum obj1{
-    sname=100,
-    sage=101,
-    sroll=102,
-}
-console.log("obj", obj1);
+// enum obj1{
+//     sname=100,
+//     sage=101,
+//     sroll=102,
+// }
+// console.log("obj", obj1);
 
 // enum(string)
 enum obj2{
