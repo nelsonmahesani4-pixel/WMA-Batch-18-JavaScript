@@ -21,23 +21,22 @@ myData = true;
 // tuple(where order is compulsory) --> it is an array with fixed number of elements and fixed data types
 var arr = [1, "ali", true];
 console.log("arr", arr);
-// var arr: readonly [string,number] = ["nelson", 1];
-// arr.push("rathore");
-// console.log("arr", arr);
+var arr = ["nelson", 1];
+arr.push("rathore");
+console.log("arr", arr);
 // enum(for objects) --> set specific keys in constants and assign values to them
-const obj = {
-    sname: "nelson",
-    sage: 12,
-};
-console.log("obj", obj);
+// const obj = {
+//     sname:"nelson",
+//     sage: 12,
+// }
+// console.log("obj", obj);
 // enum(numeric)
-var obj1;
-(function (obj1) {
-    obj1[obj1["sname"] = 100] = "sname";
-    obj1[obj1["sage"] = 101] = "sage";
-    obj1[obj1["sroll"] = 102] = "sroll";
-})(obj1 || (obj1 = {}));
-console.log("obj", obj1);
+// enum obj1{
+//     sname=100,
+//     sage=101,
+//     sroll=102,
+// }
+// console.log("obj", obj1);
 // enum(string)
 var obj2;
 (function (obj2) {
@@ -67,8 +66,8 @@ data = 23;
 // function myFunct(message){
 //     console.log("msg", message);
 // 
-// // -- functions in typescript--
-// function myFunct(message){
-//     console.log("msg", message);
-// }
-// myFunct("This is a function");
+// -- functions in typescript--
+function myFunct(message) {
+    console.log("msg", message);
+}
+myFunct("This is a function");

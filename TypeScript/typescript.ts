@@ -93,11 +93,11 @@ data = 23;
 //     console.log("msg", message);
 // 
 
-// // -- functions in typescript--
-// function myFunct(message){
-//     console.log("msg", message);
-// }
-// myFunct("This is a function");
+// -- functions in typescript--
+function myFunct(message){
+    console.log("msg", message);
+}
+myFunct("This is a function");
 
 
 
