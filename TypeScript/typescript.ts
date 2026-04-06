@@ -25,34 +25,34 @@ myData = true;
 // enum
 // tuple(where order is compulsory) --> it is an array with fixed number of elements and fixed data types
 
-// var arr:[number, string , boolean]= [ 1, "ali", true];
-// console.log("arr", arr);
+var arr:[number, string , boolean]= [ 1, "ali", true];
+console.log("arr", arr);
 
-// var arr: readonly [string,number] = ["nelson", 1];
-// arr.push("rathore");
+var arr: readonly [string,number] = ["nelson", 1];
+arr.push("rathore");
  
-// console.log("arr", arr);
+console.log("arr", arr);
 
 // enum(for objects) --> set specific keys in constants and assign values to them
 
-// const obj = {
-//     sname:"nelson",
-//     sage: 12,
-// }
-// console.log("obj", obj);
-// enum(numeric)
-// enum obj1{
-//     sname=100,
-//     sage=101,
-//     sroll=102,
-// }
-// console.log("obj", obj1);
+const obj = {
+    sname:"nelson",
+    sage: 12,
+}
+console.log("obj", obj);
+enum(numeric)
+enum obj1{
+    sname=100,
+    sage=101,
+    sroll=102,
+}
+console.log("obj", obj1);
 
 // enum(string)
-// enum obj2{
-//     sname="name", sage ="age", sroll="roll"
-// }
-// console.log("obj", obj2);
+enum obj2{
+    sname="name", sage ="age", sroll="roll"
+}
+console.log("obj", obj2);
 
 // --objects in typescript--
 // type aliasing --> creating a new name for a type
